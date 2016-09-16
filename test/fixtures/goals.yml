@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_user: 1
+  what: MyString
+  cost: 9.99
+  when: 2016-09-16 15:56:03
+  how: MyString
+  where_invest: MyString
+
+two:
+  id_user: 1
+  what: MyString
+  cost: 9.99
+  when: 2016-09-16 15:56:03
+  how: MyString
+  where_invest: MyString
