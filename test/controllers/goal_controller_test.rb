@@ -1,13 +1,8 @@
 require 'test_helper'
 
 class GoalControllerTest < ActionController::TestCase
-  test "should get new" do
-    get :new
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get :edit
+  test "should get index" do
+    get :index
     assert_response :success
   end
 

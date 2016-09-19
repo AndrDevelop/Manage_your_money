@@ -1,0 +1,145 @@
+<div class="table-responsive">
+<% if @goal_short_period.empty? %>
+<%end%>
+	<%= form_tag({controller: "goal", action: "save"}, method: "post", class: "nifty_form") do %>
+		<table class="table table-bordered .table-condensed">
+			<thead>
+				<tr>
+					<th>Months and years</th>
+					<th>What?</th>
+					<th>Cost</th>
+					<th>When do I want to fulfill it?</th>
+					<th>How am I going to achieve it?</th>
+					<th>Where am I going to invest?</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Short period</td>
+					<td>
+						<% if @goal_short_period.empty? %>
+							<%= text_field_tag 'what_1', nil, class: 'form-control', placeholder: 'What?' %>
+						<% else %>
+							<%= text_field_tag 'what_1', @goal_short_period[0].what, class: 'form-control', placeholder: 'What?' %>
+						<%end%>
+					</td>
+					<td>
+						<% if @goal_short_period.empty? %>
+							<%= text_field_tag 'cost_1', nil, class: 'form-control', placeholder: 'Cost' %>
+						<% else %>
+							<%= text_field_tag 'cost_1', @goal_short_period[0].cost, class: 'form-control', placeholder: 'Cost' %>
+						<%end%>
+					</td>
+					<td>
+						<% if @goal_short_period.empty? || @goal_short_period[0].when.nil? %>
+							<%= text_field_tag 'when_1', nil, class: 'form-control', placeholder: 'When do I want to fulfill it??' %>
+						<% else %>
+							<%= text_field_tag 'when_1', @goal_short_period[0].when.to_time.strftime("%m/%d/%Y"), class: 'form-control', placeholder: 'When do I want to fulfill it??' %>
+						<%end%>
+					</td>
+					<td>
+						<% if @goal_short_period.empty? %>
+							<%= text_field_tag 'how_1', nil, class: 'form-control', placeholder: 'How am I going to achieve it?' %>
+						<% else %>
+							<%= text_field_tag 'how_1', @goal_short_period[0].how, class: 'form-control', placeholder: 'How am I going to achieve it?' %>
+						<%end%>
+					</td>
+					<td>
+						<% if @goal_short_period.empty? %>
+							<%= text_field_tag 'where_invest_1', nil, class: 'form-control', placeholder: 'Where am I going to invest?' %>
+						<% else %>
+							<%= text_field_tag 'where_invest_1', @goal_short_period[0].where_invest, class: 'form-control', placeholder: 'Where am I going to invest?' %>
+						<%end%>
+					</td>
+				</tr>
+				<tr>
+					<td>Mid period</td>
+					<td>
+						<% if @goal_mid_period.empty? %>
+							<%= text_field_tag 'what_2', nil, class: 'form-control', placeholder: 'What?' %>
+						<% else %>
+							<%= text_field_tag 'what_2', @goal_mid_period[0].what, class: 'form-control', placeholder: 'What?' %>
+						<%end%>
+					</td>
+					<td>
+						<% if @goal_mid_period.empty? %>
+							<%= text_field_tag 'cost_2', nil, class: 'form-control', placeholder: 'Cost' %>
+						<% else %>
+							<%= text_field_tag 'cost_2', @goal_mid_period[0].cost, class: 'form-control', placeholder: 'Cost' %>
+						<%end%>
+					</td>
+					<td>
+						<% if @goal_mid_period.empty? || @goal_mid_period[0].when.nil? %>
+							<%= text_field_tag 'when_2', nil, class: 'form-control', placeholder: 'When do I want to fulfill it??' %>
+						<% else %>
+							<%= text_field_tag 'when_2', @goal_mid_period[0].when.to_time.strftime("%m/%d/%Y"), class: 'form-control', placeholder: 'When do I want to fulfill it??' %>
+						<%end%>
+					</td>
+					<td>
+						<% if @goal_mid_period.empty? %>
+							<%= text_field_tag 'how_2', nil, class: 'form-control', placeholder: 'How am I going to achieve it?' %>
+						<% else %>
+							<%= text_field_tag 'how_2', @goal_mid_period[0].how, class: 'form-control', placeholder: 'How am I going to achieve it?' %>
+						<%end%>
+					</td>
+					<td>
+						<% if @goal_mid_period.empty? %>
+							<%= text_field_tag 'where_invest_2', nil, class: 'form-control', placeholder: 'Where am I going to invest?' %>
+						<% else %>
+							<%= text_field_tag 'where_invest_2', @goal_mid_period[0].where_invest, class: 'form-control', placeholder: 'Where am I going to invest?' %>
+						<%end%>
+					</td>
+				</tr>
+				<tr>
+					<td>Long period</td>
+					<td>
+						<% if @goal_lomg_period.empty? %>
+							<%= text_field_tag 'what_3', nil, class: 'form-control', placeholder: 'What?' %>
+						<% else %>
+							<%= text_field_tag 'what_3', @goal_lomg_period[0].what, class: 'form-control', placeholder: 'What?' %>
+						<%end%>
+					</td>
+					<td>
+						<% if @goal_lomg_period.empty? %>
+							<%= text_field_tag 'cost_3', nil, class: 'form-control', placeholder: 'Cost' %>
+						<% else %>
+							<%= text_field_tag 'cost_3', @goal_lomg_period[0].cost, class: 'form-control', placeholder: 'Cost' %>
+						<%end%>
+						
+					</td>
+					<td>
+						<% if @goal_lomg_period.empty? || @goal_lomg_period[0].when.nil? %>
+							<%= text_field_tag 'when_3', nil, class: 'form-control', placeholder: 'When do I want to fulfill it??' %>
+						<% else %>
+							<%= text_field_tag 'when_3', @goal_lomg_period[0].when.to_time.strftime("%m/%d/%Y"), class: 'form-control', placeholder: 'When do I want to fulfill it??' %>
+						<%end%>
+					</td>
+					<td>
+						<% if @goal_lomg_period.empty? %>
+							<%= text_field_tag 'how_3', nil, class: 'form-control', placeholder: 'How am I going to achieve it?' %>
+						<% else %>
+							<%= text_field_tag 'how_3', @goal_lomg_period[0].how, class: 'form-control', placeholder: 'How am I going to achieve it?' %>
+						<%end%>
+					</td>
+					<td>
+						<% if @goal_lomg_period.empty? %>
+							<%= text_field_tag 'where_invest_3', nil, class: 'form-control', placeholder: 'Where am I going to invest?' %>
+						<% else %>
+							<%= text_field_tag 'where_invest_3', @goal_lomg_period[0].where_invest, class: 'form-control', placeholder: 'Where am I going to invest?' %>
+						<%end%>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<%= submit_tag("Save Data", :class => 'btn btn-lg btn-primary btn-block') %>
+	<% end %>
+</div>
+
+<script>
+	$(function()
+	{
+		$('#when_1').datepicker();
+		$('#when_2').datepicker();
+		$('#when_3').datepicker();
+	});
+</script>

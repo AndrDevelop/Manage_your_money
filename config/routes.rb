@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  get 'goal/new'
+  
 
-  get 'goal/edit'
-
-  #get 'page/home'
-
+  # for goals form (edit and new)
+  get 'goal/index'
+  post 'goal/save'
+  #, to: 'goal#save'
   get 'page/about'
 
   get 'page/contact'
